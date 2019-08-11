@@ -4,8 +4,8 @@ def SelectionSortStep(array,i):
         size=len(array)
         if i+1>size:
             return None
-        elif i+1==size:
-            return array
+       # elif i+1==size:
+       #     return array
         else:
             min=array[i]
             index=i
@@ -13,7 +13,7 @@ def SelectionSortStep(array,i):
                 if array[j]<min:
                     min=array[j]
                     index=j
-            array[i],array[j]=array[j],array[i]
+            array[i],array[index]=array[index],array[i]
             return array
     else:
         return None
@@ -24,19 +24,26 @@ def BubbleSortStep(array,i):
         size=len(array)
         if i+1>size:
             return None
-        elif i+1==size:
-            return array
         else:
             index=i
+            count=0
             for j in range(i+1,size):
                 if array[index]>array[j]:
                     array[index],array[j]=array[j],array[index]
                     index=j
+                    count+=1
                 else:
-                    return array
+                    pass
+            if count==0:
+                return True
+            else:
+                return array
+    
 
 """
-a=[1,30,4,5,6,23,4,24]
-print(SelectionSortStep(a,1))
+a=[1,30,4,5,6,23,40,24]
+print(SelectionSortStep(a,6))
+
 print(BubbleSortStep(a,1))
+print(BubbleSortStep(a,4))
 """
