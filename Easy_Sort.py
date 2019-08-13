@@ -32,9 +32,9 @@ def BubbleSortStep(array):
         if count==0:
             return True
         else:
-            return array
+            return False
     else: 
-        return None
+        return False
     
 """
 a=[1,30,4,5,6,23,40,24]
