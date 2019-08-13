@@ -18,32 +18,28 @@ def SelectionSortStep(array,i):
     else:
         return None
 
-def BubbleSortStep(array,i):
+def BubbleSortStep(array):
     #Сортировка пузерьком, один цикл
-    if type(array) is list and i!=None: 
+    if type(array) is list: 
         size=len(array)
-        if i+1>size:
-            return None
-        else:
-            index=i
-            count=0
-            for j in range(i+1,size):
-                if array[index]>array[j]:
-                    array[index],array[j]=array[j],array[index]
-                    index=j
-                    count+=1
-                else:
-                    pass
-            if count==0:
-                return True
+        count=0
+        for j in range(0,size-1):
+            if array[j]>array[j+1]:
+                array[j],array[j+1]=array[j+1],array[j]
+                count+=1
             else:
-                return array
+                pass
+        if count==0:
+            return True
+        else:
+            return array
+    else: 
+        return None
     
-
 """
 a=[1,30,4,5,6,23,40,24]
-print(SelectionSortStep(a,6))
+#print(SelectionSortStep(a,6))
 
-print(BubbleSortStep(a,1))
-print(BubbleSortStep(a,4))
+print(BubbleSortStep(a))
+print(BubbleSortStep(a))
 """
